@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,49 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ARHoops" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYT-Rs-p3W">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOq-yh-pHP">
+                                <rect key="frame" x="175" y="321" width="24" height="24"/>
+                                <state key="normal" image="Plus"/>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plane Detected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ac6-gL-UWj">
+                                <rect key="frame" x="113.5" y="60" width="149" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ac6-gL-UWj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="4dJ-rX-O6L"/>
+                            <constraint firstItem="UYT-Rs-p3W" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4ks-u4-bDj"/>
+                            <constraint firstItem="ac6-gL-UWj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="78n-eK-tvK"/>
+                            <constraint firstItem="UYT-Rs-p3W" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bRu-lU-oaa"/>
+                            <constraint firstItem="UYT-Rs-p3W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fxG-YP-4eu"/>
+                            <constraint firstItem="YOq-yh-pHP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n9J-kJ-A50"/>
+                            <constraint firstItem="UYT-Rs-p3W" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="phO-Iz-YOz"/>
+                            <constraint firstItem="YOq-yh-pHP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vDr-UL-Jbf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="planeDetectedLabel" destination="ac6-gL-UWj" id="tT6-bN-9qX"/>
+                        <outlet property="sceneView" destination="UYT-Rs-p3W" id="6OE-cY-7S6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Plus" width="24" height="24"/>
+    </resources>
 </document>
